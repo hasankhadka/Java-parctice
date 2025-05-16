@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"path": "../../../../xampp/htdocs/.vscode"
+		},
+		{
+			"path": "../../../../xampp/htdocs/assets"
+		},
+		{
+			"path": "../../../../xampp/htdocs/Booked"
+		},
+		{
+			"path": "../../../../xampp/htdocs/Final"
+		},
+		{
+			"path": "../../../../xampp/htdocs/Home"
+		},
+		{
+			"path": "../../../../xampp/htdocs/HPA_Log_In"
+		},
+		{
+			"path": "../../../../xampp/htdocs/Log In"
+		},
+		{
+			"path": "../../../../xampp/htdocs/PassForgot"
+		},
+		{
+			"path": "../../../../xampp/htdocs/SignUp"
+		}
+	]
+}
