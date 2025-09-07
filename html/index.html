@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    form { max-width: 400px; margin: auto; }
+    input, select, textarea { width: 100%; padding: 8px; margin: 10px 0; }
+    .error { color: rgb(192, 17, 17); }
+  </style>
+</head>
+<body>
+
+<h2>Login Form</h2>
+
+<form id="loginForm" onsubmit="return validateForm()">
+  <label>Username (5-6 characters):</label>
+  <input type="text" id="username" name="username" required>
+
+  <label>Password:</label>
+  <input type="password" id="password" name="password" required>
+
+  <label>Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label>Country:</label>
+  <select id="country" name="country" required>
+    <option value="">-- Select Country --</option>
+    <option value="US">United States</option>
+    <option value="IN">India</option>
+    <option value="UK">United Kingdom</option>
+    <option value="CA">Canada</option>
+    <option value="CA">Nepal</option>
+  
+    <!-- Add more as needed -->
+  </select>
+
+  <label>Message (must contain 'mail' & 50+ characters):</label>
+  <textarea id="message" name="message" rows="4" required></textarea>
+
+  <button type="submit">Login</button>
+
+  <p id="errorMsg" class="error"></p>
+</form>
+
+<script>
+  function validateForm() {
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
+    const email = document.getElementById("email").value.trim();
+    const country = document.getElementById("country").value;
+    const message = document.getElementById("message").value.trim();
+    const errorMsg = document.getElementById("errorMsg");
+
+    errorMsg.textContent = "";
+
+    // Username validation: 5-6 characters
+    if (username.length < 5 || username.length > 6) {
+      errorMsg.textContent = "Username must be 5 to 6 characters.";
+      return false;
+    }
+
+    // Password validation
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$/;
+    if (!passwordRegex.test(password)) {
+      errorMsg.textContent = "Password must contain upper, lower, digit, and special character.";
+      return false;
+    }
+
+    // Email validation handled by input type="email"
+
+    // Country must be selected
+    if (country === "") {
+      errorMsg.textContent = "Please select a country.";
+      return false;
+    }
+
+    // Message validation
+    if (message.length < 50 || !message.toLowerCase().includes("mail")) {
+      errorMsg.textContent = "Message must be at least 50 characters and contain the word 'mail'.";
+      return false;
+    }
+
+    alert("Form submitted successfully!");
+    return true;
+  }
+</script>
+
+</body>
+</html>

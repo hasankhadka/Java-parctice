@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" oneclick="alter('You clicked me...');"> click me</button>
+
+
+
+
+
+
+    <div id="box">
+        <p>This is paragraph.</p>
+        <button type="button" id="btn">change text</button>
+        <button type="button" id="rmvBtn">Revert Change</button>
+
+    </div>
+    <script type="text/javascript">
+        /* Js element selector:document.*
+        -getElementById()
+        -getElementsByClassname()
+        -getElementsByTagname()
+        -querySelector(CSS Selector)
+        -querySelectorAll(css Selector)
+        -form_name or form_name.field_name
+    variable making
+    -var :redeclare and redefine is allow
+    -let :redeclare is not allowed,but redefined is allowed
+    -const: redeclare  and redefine is not allowed
+        */
+
+
+
+    var a;//Declare
+    a =10;//define
+    var a;//re-declare
+    a=5;//defin
+    a=20;//re-define
+
+
+    let b;//declare
+    b=2;//define
+    b=5;//re-define
+      // let b;//re-declare not allowed
+
+
+    const c=6;//re-declare and re-define doesn't allow,use single line
+    const PI =3.14;
+
+    /* Data typing:
+    -static data typing(c/c++ etc)
+    -Dynamic data typing(js/php etc)
+
+    Data types:
+    -pre-defined (built-in) :Number, string ,boolean ,undefined,null etc
+    */
+
+
+
+    let box=document.getElementById("box"),
+    btn=document.getElementById("btn");
+      //#2 apply js event
+       btn.addEventListener("click",function(){
+
+
+        console.log(box.childNodes, box.children[0]);
+
+       box.children[0].innerText ="You changed me";
+       box.children[0].style.backgroundColor="yellow";
+       box.children[0].style.color="red";
+        
+       //button style
+       this.style.backgroundColor ="limegreen";
+       this.style.border ="none";
+       this.style.padding="10px 30px";
+       this.style.color="#FFF"
+    
+    
+    
+    });
+ rmvBtn.addEventListener("click", function(){
+    box.children[0].innerText ="This is paragraph.";
+    box.children[0].style="";
+    btn.style ="";
+
+ });
+
+
+
+    </script>
+
+</body>
+</html>
